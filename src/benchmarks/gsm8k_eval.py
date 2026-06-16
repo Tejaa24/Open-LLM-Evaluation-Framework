@@ -3,6 +3,7 @@ GSM8K Benchmark Evaluation
 """
 
 import csv
+from src.models.model_runner import generate_answer
 
 sample_questions = [
     {
@@ -24,12 +25,17 @@ for item in sample_questions:
 
     print("\nQuestion:", question)
 
-    user_answer = expected  # Placeholder prediction
+    # Generate answer using DistilGPT2
+    user_answer = generate_answer(question)
 
-    print("Predicted:", user_answer)
-    print("Expected :", expected)
+    print("\nGenerated Answer:")
+    print(user_answer)
 
-    is_correct = user_answer == expected
+    print("\nExpected Answer:")
+    print(expected)
+
+    # Simple correctness check
+    is_correct = str(expected) in user_answer
 
     if is_correct:
         correct += 1
@@ -54,13 +60,15 @@ with open(
 
     writer.writerow([
         "question",
-        "predicted",
-        "expected",
+        "generated_answer",
+        "expected_answer",
         "correct"
     ])
 
     writer.writerows(results)
 
-print("\nEvaluation Complete")
+print("\n===================================")
+print("Evaluation Complete")
 print("Accuracy:", accuracy)
 print("Results saved successfully")
+print("===================================")
