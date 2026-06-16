@@ -1,0 +1,3 @@
+question,predicted,expected,correct
+John has 5 apples and buys 3 more. How many apples does he have?,8,8,True
+A box contains 10 balls. 2 are removed. How many remain?,8,8,True
