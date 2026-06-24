@@ -7,19 +7,20 @@ generator = pipeline(
     model="TinyLlama/TinyLlama-1.1B-Chat-v1.0"
 )
 
-prompt = """
+def generate_answer(prompt):
+
+    messages = f"""
 <|system|>
 You are a helpful AI assistant.
 <|user|>
-What is 15 + 27?
+{prompt}
 <|assistant|>
 """
 
-result = generator(
-    prompt,
-    max_new_tokens=20,
-    do_sample=False
-)
+    result = generator(
+        messages,
+        max_new_tokens=30,
+        do_sample=False
+    )
 
-print("\nGenerated Answer:")
-print(result[0]["generated_text"])
+    return result[0]["generated_text"]

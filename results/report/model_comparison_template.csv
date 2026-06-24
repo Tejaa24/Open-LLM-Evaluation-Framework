@@ -1,4 +1,5 @@
 model,accuracy,consistency,reliability,status
+DistilGPT2,0.0,Low,Low,completed
+TinyLlama,1.0,High,High,completed
 Gemma,N/A,N/A,N/A,planned
-Llama,N/A,N/A,N/A,planned
 Mistral,N/A,N/A,N/A,planned

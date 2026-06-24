@@ -8,10 +8,11 @@ generator = pipeline(
 )
 
 def generate_answer(prompt):
+
     result = generator(
         prompt,
         max_new_tokens=30,
-        do_sample=True
+        do_sample=False
     )
 
     return result[0]["generated_text"]
