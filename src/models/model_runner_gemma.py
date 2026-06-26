@@ -7,18 +7,12 @@ generator = pipeline(
     model="microsoft/phi-2"
 )
 
-print("Model Loaded Successfully")
-
 def generate_answer(prompt):
-
-    print("Generating answer...")
 
     result = generator(
         prompt,
         max_new_tokens=30,
         do_sample=False
     )
-
-    print("Generation Complete")
 
     return result[0]["generated_text"]

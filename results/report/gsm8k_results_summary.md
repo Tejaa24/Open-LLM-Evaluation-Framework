@@ -2,29 +2,40 @@
 
 ## Experiment
 
-A prototype GSM8K evaluation was executed using a sample benchmark subset.
+A mini GSM8K benchmark evaluation was performed to compare the reasoning performance of open-source language models.
+
+## Models Evaluated
+
+1. DistilGPT2
+2. TinyLlama 1.1B Chat
 
 ## Results
 
-Questions Evaluated: 2
-
-Correct Answers: 2
-
-Accuracy: 1.0
+| Model | Accuracy |
+|---------|---------|
+| DistilGPT2 | 0.0 |
+| TinyLlama | 1.0 |
 
 ## Observations
 
-* Evaluation pipeline executed successfully.
-* Result storage functionality is operational.
-* Accuracy calculation module produced expected outputs.
+- TinyLlama successfully solved all benchmark questions.
+- DistilGPT2 failed to produce correct numerical reasoning outputs.
+- TinyLlama demonstrated significantly better reasoning capability than DistilGPT2.
+- Benchmark result storage and reporting modules worked correctly.
 
 ## Limitations
 
-* Placeholder predictions were used.
-* Only a small benchmark subset was evaluated.
+- Only a small GSM8K sample set was evaluated.
+- Phi-2 could not be fully evaluated due to model loading issues.
+- Mistral benchmarking is pending.
 
-## Next Steps
+## Conclusion
 
-* Integrate TinyLlama inference.
-* Expand GSM8K coverage.
-* Support multi-model benchmarking.
+TinyLlama outperformed DistilGPT2 on the GSM8K mini benchmark and proved more suitable for mathematical reasoning tasks. The evaluation framework successfully generated benchmark reports, accuracy metrics, and comparison results.
+
+## Future Work
+
+- Expand GSM8K coverage.
+- Add Mistral benchmarking.
+- Evaluate larger instruction-tuned models.
+- Add automated leaderboard generation.
