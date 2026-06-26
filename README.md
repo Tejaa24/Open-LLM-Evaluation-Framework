@@ -1,90 +1,207 @@
 # Open-LLM-Evaluation-Framework
 
-A research-oriented framework for evaluating open-source Large Language Models (LLMs) across reasoning, factuality, consistency, reliability, and hallucination benchmarks.
+A research-oriented framework for evaluating open-source Large Language Models (LLMs) using benchmark datasets and multiple evaluation metrics. The framework supports benchmarking, model comparison, result visualization, and report generation.
 
-## Overview
+---
 
-This project provides a reproducible evaluation framework for benchmarking open-source LLMs using standardized datasets, custom evaluation metrics, experiment tracking, and result visualization.
+# Project Overview
 
-The goal is to support systematic analysis of model performance and reliability across multiple reasoning and factuality tasks.
+The objective of this project is to evaluate the performance of open-source LLMs on reasoning benchmarks and compare their performance using standardized evaluation metrics.
 
-## Features
+The framework currently supports:
 
-* Benchmark-based LLM evaluation
-* Accuracy measurement
-* Consistency analysis
-* Reliability scoring
-* Hallucination detection
-* Experiment planning and tracking
-* Result visualization
-* Research documentation workflow
+- Benchmark evaluation
+- Accuracy calculation
+- Consistency analysis
+- Reliability evaluation
+- Hallucination analysis
+- Model comparison
+- Result visualization
+- Report generation
 
-## Supported Benchmarks
+---
 
-* GSM8K
-* TruthfulQA
-* HellaSwag
+# Features
 
-## Evaluation Metrics
+- GSM8K benchmark evaluation
+- Accuracy measurement
+- Consistency evaluation
+- Reliability scoring
+- Hallucination analysis
+- CSV result generation
+- Model comparison
+- Visualization using charts
+- Modular project structure
 
-| Metric             | Description                           |
-| ------------------ | ------------------------------------- |
-| Accuracy           | Measures correctness of model outputs |
-| Consistency        | Measures stability across evaluations |
-| Reliability        | Measures overall dependability        |
-| Hallucination Rate | Measures unsupported factual claims   |
+---
 
-## Repository Structure
+# Models Evaluated
+
+| Model | Status |
+|--------|--------|
+| DistilGPT2 | Completed |
+| TinyLlama-1.1B-Chat | Completed |
+| Phi-2 | In Progress |
+| Mistral | Planned |
+
+---
+
+# Supported Benchmarks
+
+- GSM8K
+- TruthfulQA (Planned)
+- HellaSwag (Planned)
+
+---
+
+# Evaluation Metrics
+
+| Metric | Description |
+|---------|-------------|
+| Accuracy | Measures correctness of model outputs |
+| Consistency | Measures stability across multiple evaluations |
+| Reliability | Measures overall model dependability |
+| Hallucination Rate | Measures unsupported factual outputs |
+
+---
+
+# Project Structure
 
 ```text
-datasets/
-docs/
-experiments/
-results/
-src/
-presentation/
+Open-LLM-Evaluation-Framework/
+│
+├── datasets/
+├── docs/
+├── experiments/
+├── presentation/
+├── results/
+│   └── report/
+├── src/
+│   ├── benchmarks/
+│   ├── metrics/
+│   ├── models/
+│   └── visualization/
+├── README.md
+├── LICENSE
+└── requirements.txt
 ```
 
-## Current Progress
+---
 
-Completed:
+# Current Progress
 
-* Evaluation metrics implementation
-* Evaluation pipeline prototype
-* GSM8K benchmark prototype
-* Experiment planning workflow
-* Methodology documentation
-* Dataset documentation
-* Result visualization pipeline
+Completed
 
-## Sample Results
+- Evaluation framework
+- GSM8K benchmark pipeline
+- DistilGPT2 integration
+- TinyLlama integration
+- Accuracy calculation
+- CSV report generation
+- Result visualization
+- Model comparison
+- Documentation
 
-| Metric             | Score |
-| ------------------ | ----- |
-| Accuracy           | 0.80  |
-| Consistency        | 0.88  |
-| Reliability        | 0.90  |
-| Hallucination Rate | 0.10  |
+---
 
-## Future Work
+# Current Results
 
-* Multi-model comparison
-* Automated benchmark execution
-* Statistical analysis
-* Interactive dashboards
-* Expanded benchmark coverage
+| Model | Accuracy | Consistency | Reliability | Status |
+|--------|-----------|-------------|-------------|--------|
+| DistilGPT2 | 0.0 | Low | Low | Completed |
+| TinyLlama | 1.0 | High | High | Completed |
+| Phi-2 | N/A | N/A | N/A | In Progress |
+| Mistral | N/A | N/A | N/A | Planned |
 
-## Research Interests
+---
 
-* Large Language Models
-* Explainable AI
-* Transformer Interpretability
-* AI Safety
-* Machine Learning Research
+# Generated Outputs
 
-## Author
+The framework automatically generates:
 
-Adi Lakshamma Bonam
+- GSM8K evaluation report
+- Accuracy report
+- Model comparison report
+- CSV benchmark results
+- Accuracy graph
+- Model comparison graph
+
+Generated files are stored in:
+
+```text
+results/report/
+```
+
+---
+
+# Technologies Used
+
+- Python
+- Hugging Face Transformers
+- Pandas
+- Matplotlib
+- CSV
+- Git
+- GitHub
+
+---
+
+# How to Run
+
+Clone the repository
+
+```bash
+git clone https://github.com/Tejaa24/Open-LLM-Evaluation-Framework.git
+```
+
+Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Run benchmark
+
+```bash
+python -m src.benchmarks.gsm8k_eval
+```
+
+---
+
+# Future Work
+
+- Evaluate Phi-2 completely
+- Add Mistral evaluation
+- Integrate TruthfulQA benchmark
+- Integrate HellaSwag benchmark
+- Add automated benchmarking pipeline
+- Build interactive dashboard
+- Support additional open-source LLMs
+
+---
+
+# Research Applications
+
+- Large Language Models
+- Benchmarking
+- Explainable AI
+- AI Safety
+- Reliability Analysis
+- Transformer Models
+- Machine Learning Research
+
+---
+
+# Author
+
+**Adi Lakshamma Bonam**
 
 Computer Science Undergraduate
 
+GitHub: https://github.com/Tejaa24
+
+---
+
+# License
+
+This project is released under the MIT License.
