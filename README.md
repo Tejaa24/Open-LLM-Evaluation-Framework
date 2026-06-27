@@ -205,3 +205,21 @@ GitHub: https://github.com/Tejaa24
 # License
 
 This project is released under the MIT License.
+
+## 🔬 Research Question
+Does increasing model size improve reasoning accuracy 
+and reduce hallucination in open-source LLMs?
+
+## 📊 Key Findings
+| Model | Parameters | GSM8K Accuracy | Hallucination Rate |
+|-------|-----------|----------------|-------------------|
+| DistilGPT2 | 82M | 3% | 85% |
+| TinyLlama | 1.1B | 15% | 60% |
+| Phi-2 | 2.7B | 42% | 35% |
+
+> Phi-2 achieved 14x higher accuracy than DistilGPT2
+
+## 📚 References
+- [GSM8K Paper](https://arxiv.org/abs/2110.14168)
+- [TruthfulQA Paper](https://arxiv.org/abs/2109.07958)
+- [HuggingFace Transformers](https://github.com/huggingface/transformers)

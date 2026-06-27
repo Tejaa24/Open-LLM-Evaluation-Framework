@@ -1,0 +1,8 @@
+{
+  "models": ["distilgpt2", "tinyllama", "phi2"],
+  "benchmarks": ["gsm8k", "truthfulqa"],
+  "sample_size": 100,
+  "consistency_runs": 3,
+  "output_dir": "results/report",
+  "metrics": ["accuracy", "consistency", "hallucination_rate", "reliability"]
+}
