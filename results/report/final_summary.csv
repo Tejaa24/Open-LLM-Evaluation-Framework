@@ -1,0 +1,4 @@
+model,parameters,type,benchmark,correct,total,accuracy,consistency,primary_failure_pattern
+DistilGPT2,82M,Base Model,GSM8K,0,10,0%,Yes,Extracts numbers from question instead of computing
+GPT2-Medium,345M,Base Model,GSM8K,0,10,0%,Yes,Repeats numbers from input without reasoning
+TinyLlama-1.1B,1.1B,Instruction Tuned,GSM8K,3,10,30%,Yes,Fails on subtraction and multiplication
