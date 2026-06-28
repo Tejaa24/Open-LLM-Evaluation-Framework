@@ -1,14 +1,32 @@
 # Open-LLM-Evaluation-Framework
 
-A research-oriented framework for evaluating open-source Large Language Models (LLMs) using benchmark datasets and multiple evaluation metrics. The framework supports benchmarking, model comparison, result visualization, and report generation.
+A research-oriented framework for evaluating open-source Large Language Models (LLMs) using benchmark datasets and multiple evaluation metrics.
 
 ---
 
-# Project Overview
+## 🔬 Research Question
 
-The objective of this project is to evaluate the performance of open-source LLMs on reasoning benchmarks and compare their performance using standardized evaluation metrics.
+Does instruction tuning impact reasoning accuracy in open-source LLMs of varying sizes?
 
-The framework currently supports:
+---
+
+## 📊 Key Findings
+
+| Model | Parameters | Type | GSM8K Accuracy |
+|---|---|---|---|
+| DistilGPT2 | 82M | Base Model | 0% |
+| GPT2-Medium | 345M | Base Model | 0% |
+| TinyLlama-1.1B | 1.1B | Instruction Tuned | 30% |
+
+> Instruction-tuned models significantly outperform base models — TinyLlama achieved 30% while base GPT2 variants scored 0%, confirming that instruction tuning is critical for mathematical reasoning tasks.
+
+---
+
+## Project Overview
+
+The objective of this project is to evaluate open-source LLMs on reasoning benchmarks and compare performance using standardized evaluation metrics.
+
+The framework supports:
 
 - Benchmark evaluation
 - Accuracy calculation
@@ -21,7 +39,7 @@ The framework currently supports:
 
 ---
 
-# Features
+## Features
 
 - GSM8K benchmark evaluation
 - Accuracy measurement
@@ -32,32 +50,35 @@ The framework currently supports:
 - Model comparison
 - Visualization using charts
 - Modular project structure
+- One-command pipeline (`run_all.py`)
 
 ---
 
-# Models Evaluated
+## Models Evaluated
 
-| Model | Status |
-|--------|--------|
-| DistilGPT2 | Completed |
-| TinyLlama-1.1B-Chat | Completed |
-| Phi-2 | In Progress |
-| Mistral | Planned |
-
----
-
-# Supported Benchmarks
-
-- GSM8K
-- TruthfulQA (Planned)
-- HellaSwag (Planned)
+| Model | Parameters | Type | Status |
+|---|---|---|---|
+| DistilGPT2 | 82M | Base Model | Completed |
+| GPT2-Medium | 345M | Base Model | Completed |
+| TinyLlama-1.1B-Chat | 1.1B | Instruction Tuned | Completed |
+| Mistral-7B | 7B | Instruction Tuned | Planned |
 
 ---
 
-# Evaluation Metrics
+## Supported Benchmarks
+
+| Benchmark | Focus | Status |
+|---|---|---|
+| GSM8K | Mathematical Reasoning | Completed |
+| TruthfulQA | Factual Accuracy / Hallucination | Planned |
+| HellaSwag | Common Sense Reasoning | Planned |
+
+---
+
+## Evaluation Metrics
 
 | Metric | Description |
-|---------|-------------|
+|---|---|
 | Accuracy | Measures correctness of model outputs |
 | Consistency | Measures stability across multiple evaluations |
 | Reliability | Measures overall model dependability |
@@ -65,161 +86,140 @@ The framework currently supports:
 
 ---
 
-# Project Structure
+## Project Structure
 
 ```text
 Open-LLM-Evaluation-Framework/
 │
+├── config/
+│   └── eval_config.json
 ├── datasets/
+│   ├── gsm8k_sample.json
+│   └── truthfulqa_sample.json
 ├── docs/
+│   ├── methodology.md
+│   ├── limitations.md
+│   └── future_work.md
 ├── experiments/
-├── presentation/
+├── report/
+│   ├── abstract.md
+│   ├── methodology.md
+│   ├── results.md
+│   ├── error_analysis.md
+│   └── conclusions.md
 ├── results/
 │   └── report/
 ├── src/
 │   ├── benchmarks/
+│   │   ├── gsm8k_eval.py
+│   │   └── truthfulqa_eval.py
+│   ├── evaluation/
+│   │   └── evaluator.py
 │   ├── metrics/
+│   │   ├── accuracy.py
+│   │   ├── consistency.py
+│   │   ├── hallucination.py
+│   │   └── reliability.py
 │   ├── models/
+│   │   ├── model_runner.py
+│   │   ├── model_runner_tinyllama.py
+│   │   └── model_runner_gemma.py
 │   └── visualization/
+│       ├── model_comparison.py
+│       ├── results_plot.py
+│       └── heatmap.py
+├── run_all.py
 ├── README.md
-├── LICENSE
-└── requirements.txt
+├── requirements.txt
+└── LICENSE
 ```
 
 ---
 
-# Current Progress
+## Current Results
 
-Completed
-
-- Evaluation framework
-- GSM8K benchmark pipeline
-- DistilGPT2 integration
-- TinyLlama integration
-- Accuracy calculation
-- CSV report generation
-- Result visualization
-- Model comparison
-- Documentation
+| Model | Parameters | GSM8K Accuracy | Type |
+|---|---|---|---|
+| DistilGPT2 | 82M | 0% | Base Model |
+| GPT2-Medium | 345M | 0% | Base Model |
+| TinyLlama-1.1B | 1.1B | 30% | Instruction Tuned |
 
 ---
 
-# Current Results
+## Error Analysis Summary
 
-| Model | Accuracy | Consistency | Reliability | Status |
-|--------|-----------|-------------|-------------|--------|
-| DistilGPT2 | 0.0 | Low | Low | Completed |
-| TinyLlama | 1.0 | High | High | Completed |
-| Phi-2 | N/A | N/A | N/A | In Progress |
-| Mistral | N/A | N/A | N/A | Planned |
-
----
-
-# Generated Outputs
-
-The framework automatically generates:
-
-- GSM8K evaluation report
-- Accuracy report
-- Model comparison report
-- CSV benchmark results
-- Accuracy graph
-- Model comparison graph
-
-Generated files are stored in:
-
-```text
-results/report/
-```
+| Model | Common Failure Pattern |
+|---|---|
+| DistilGPT2 | Extracts numbers from question instead of computing answer |
+| GPT2-Medium | Same pattern — repeats numbers from input |
+| TinyLlama | Correct on simple addition, fails on multi-step reasoning |
 
 ---
 
-# Technologies Used
+## How to Run
 
-- Python
-- Hugging Face Transformers
-- Pandas
-- Matplotlib
-- CSV
-- Git
-- GitHub
-
----
-
-# How to Run
-
-Clone the repository
-
+Clone the repository:
 ```bash
 git clone https://github.com/Tejaa24/Open-LLM-Evaluation-Framework.git
 ```
 
-Install dependencies
-
+Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-Run benchmark
+Run full pipeline:
+```bash
+python run_all.py
+```
 
+Run GSM8K benchmark only:
 ```bash
 python -m src.benchmarks.gsm8k_eval
 ```
 
 ---
 
-# Future Work
+## Technologies Used
 
-- Evaluate Phi-2 completely
-- Add Mistral evaluation
+- Python 3.10+
+- Hugging Face Transformers
+- PyTorch
+- Pandas
+- Matplotlib
+- CSV
+- Git / GitHub
+
+---
+
+## Future Work
+
+- Add Mistral-7B evaluation
 - Integrate TruthfulQA benchmark
 - Integrate HellaSwag benchmark
-- Add automated benchmarking pipeline
 - Build interactive dashboard
-- Support additional open-source LLMs
+- GPU support for larger models
+- Automated benchmarking pipeline
 
 ---
 
-# Research Applications
+## 📚 References
 
-- Large Language Models
-- Benchmarking
-- Explainable AI
-- AI Safety
-- Reliability Analysis
-- Transformer Models
-- Machine Learning Research
+- [GSM8K Paper](https://arxiv.org/abs/2110.14168)
+- [TruthfulQA Paper](https://arxiv.org/abs/2109.07958)
+- [HuggingFace Transformers](https://github.com/huggingface/transformers)
+- [TinyLlama](https://github.com/jzhang38/TinyLlama)
 
 ---
 
-# Author
+## Author
 
 **Adi Lakshamma Bonam**
-
 Computer Science Undergraduate
-
 GitHub: https://github.com/Tejaa24
 
 ---
 
-# License
+## License
 
 This project is released under the MIT License.
-
-## 🔬 Research Question
-Does increasing model size improve reasoning accuracy 
-and reduce hallucination in open-source LLMs?
-
-## 📊 Key Findings
-| Model | Parameters | GSM8K Accuracy | Hallucination Rate |
-|-------|-----------|----------------|-------------------|
-| DistilGPT2 | 82M | 3% | 85% |
-| TinyLlama | 1.1B | 15% | 60% |
-| Phi-2 | 2.7B | 42% | 35% |
-
-> Phi-2 achieved 14x higher accuracy than DistilGPT2
-
-## 📚 References
-- [GSM8K Paper](https://arxiv.org/abs/2110.14168)
-- [TruthfulQA Paper](https://arxiv.org/abs/2109.07958)
-- [HuggingFace Transformers](https://github.com/huggingface/transformers)

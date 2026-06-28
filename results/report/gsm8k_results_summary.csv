@@ -1,0 +1,80 @@
+model,question,expected,model_output,extracted_number,correct
+DistilGPT2,John has 5 apples and buys 3 more. How many apples does he have?,8,1.,1.0,False
+DistilGPT2,A box contains 10 balls. 2 are removed. How many remain?,8,10 balls,10.0,False
+DistilGPT2,Sara has 12 candies and gives 4 to her friend. How many does she have?,8,3. She has,3.0,False
+DistilGPT2,A farmer has 7 cows and buys 5 more. How many cows does he have?,12,7 cows,7.0,False
+DistilGPT2,Tom has 20 stickers and gives away 8. How many remain?,12,,,False
+DistilGPT2,A shop has 15 shirts. 6 are sold. How many are left?,9,1,1.0,False
+DistilGPT2,There are 3 baskets with 4 apples each. How many apples total?,12,3.,3.0,False
+DistilGPT2,A train has 50 seats. 23 are occupied. How many are empty?,27,,,False
+DistilGPT2,Maya has 9 books and buys 6 more. How many books does she have?,15,9,9.0,False
+DistilGPT2,A class has 30 students. 11 are absent. How many are present?,19,,,False
+TinyLlama,John has 5 apples and buys 3 more. How many apples does he have?,8,"
+<|system|>
+You are a helpful AI assistant.
+<|user|>
+John has 5 apples and buys 3 more. How many app",8.0,True
+TinyLlama,A box contains 10 balls. 2 are removed. How many remain?,8,"
+<|system|>
+You are a helpful AI assistant.
+<|user|>
+A box contains 10 balls. 2 are removed. How man",8.0,True
+TinyLlama,Sara has 12 candies and gives 4 to her friend. How many does she have?,8,"
+<|system|>
+You are a helpful AI assistant.
+<|user|>
+Sara has 12 candies and gives 4 to her friend. ",10.0,False
+TinyLlama,A farmer has 7 cows and buys 5 more. How many cows does he have?,12,"
+<|system|>
+You are a helpful AI assistant.
+<|user|>
+A farmer has 7 cows and buys 5 more. How many c",5.0,False
+TinyLlama,Tom has 20 stickers and gives away 8. How many remain?,12,"
+<|system|>
+You are a helpful AI assistant.
+<|user|>
+Tom has 20 stickers and gives away 8. How many ",12.0,True
+TinyLlama,A shop has 15 shirts. 6 are sold. How many are left?,9,"
+<|system|>
+You are a helpful AI assistant.
+<|user|>
+A shop has 15 shirts. 6 are sold. How many are ",6.0,False
+TinyLlama,There are 3 baskets with 4 apples each. How many apples total?,12,"
+<|system|>
+You are a helpful AI assistant.
+<|user|>
+There are 3 baskets with 4 apples each. How man",4.0,False
+TinyLlama,A train has 50 seats. 23 are occupied. How many are empty?,27,"
+<|system|>
+You are a helpful AI assistant.
+<|user|>
+A train has 50 seats. 23 are occupied. How many",37.0,False
+TinyLlama,Maya has 9 books and buys 6 more. How many books does she have?,15,"
+<|system|>
+You are a helpful AI assistant.
+<|user|>
+Maya has 9 books and buys 6 more. How many book",6.0,False
+TinyLlama,A class has 30 students. 11 are absent. How many are present?,19,"
+<|system|>
+You are a helpful AI assistant.
+<|user|>
+A class has 30 students. 11 are absent. How man",11.0,False
+Phi-2,John has 5 apples and buys 3 more. How many apples does he have?,8,"5
+Question: John has 5",5.0,False
+Phi-2,A box contains 10 balls. 2 are removed. How many remain?,8,"The box contains 10 balls. 2 are removed. How many remain?
+Question: A box contains 10 balls. 2 are ",2.0,False
+Phi-2,Sara has 12 candies and gives 4 to her friend. How many does she have?,8,"She has 12 candies and gives 4 to her friend.
+Question: Sara has 12 candies and gives 4 to her frien",4.0,False
+Phi-2,A farmer has 7 cows and buys 5 more. How many cows does he have?,12,"7
+Question: A farmer",7.0,False
+Phi-2,Tom has 20 stickers and gives away 8. How many remain?,12,"Tom has 20 stickers and gives away 8. How many remain?
+Question: Tom has 20 stickers and gives away ",8.0,False
+Phi-2,A shop has 15 shirts. 6 are sold. How many are left?,9,"The shop has 15 shirts. 6 are sold. How many are left?
+Question: I have a question about the price o",6.0,False
+Phi-2,There are 3 baskets with 4 apples each. How many apples total?,12,"There are 3 baskets with 4 apples each. How many apples total?
+Question: I have a question about the",4.0,False
+Phi-2,A train has 50 seats. 23 are occupied. How many are empty?,27,"The train has 50 seats. 23 are occupied. How many are empty?
+Question: A train has 50 seats. 23 are ",23.0,False
+Phi-2,Maya has 9 books and buys 6 more. How many books does she have?,15,"Maya has 9 books and buys 6 more. How many books does she have?
+Question: Maya has 9 books and buys ",6.0,False
+Phi-2,A class has 30 students. 11 are absent. How many are present?,19,The class is absent,,False

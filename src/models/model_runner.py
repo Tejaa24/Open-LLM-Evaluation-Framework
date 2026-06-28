@@ -1,24 +1,22 @@
+"""
+DistilGPT2 Model Runner
+"""
 from transformers import pipeline
 
-print("Loading Phi-2...")
-
-generator = pipeline(
-    "text-generation",
-    model="microsoft/phi-2"
-)
-
+print("Loading DistilGPT2...")
+generator = pipeline("text-generation", model="distilgpt2")
 print("Model Loaded Successfully")
 
-def generate_answer(prompt):
-
+def generate_answer(question):
     print("Generating answer...")
-
-    result = generator(
+    prompt = f"Question: {question}\nAnswer:"
+    output = generator(
         prompt,
-        max_new_tokens=30,
-        do_sample=False
+        max_new_tokens=50,
+        do_sample=False,
+        temperature=1.0
     )
-
+    generated = output[0]["generated_text"]
+    answer_part = generated.split("Answer:")[-1].strip()
     print("Generation Complete")
-
-    return result[0]["generated_text"]
+    return answer_part
