@@ -1,23 +1,41 @@
 # Abstract
 
-This study presents an open-source evaluation framework 
-for benchmarking Large Language Models (LLMs) on reasoning 
-and factuality tasks.
+## Project Title
+Open-LLM Evaluation Framework: Benchmarking Open-Source 
+Large Language Models on Mathematical Reasoning Tasks
 
 ## Research Question
-Does increasing model size in open-source LLMs lead to 
-improved reasoning accuracy and reduced hallucination rates?
+Does instruction tuning impact reasoning accuracy in 
+open-source LLMs of varying sizes?
+
+## Objective
+This study evaluates and compares three open-source Large 
+Language Models on the GSM8K mathematical reasoning benchmark 
+to analyze the impact of instruction tuning on model performance.
 
 ## Models Evaluated
-- DistilGPT2 (82M parameters)
-- TinyLlama-1.1B (1.1B parameters)  
-- Phi-2 (2.7B parameters)
+- DistilGPT2 (82M parameters) — Base Model
+- GPT2-Medium (345M parameters) — Base Model
+- TinyLlama-1.1B-Chat (1.1B parameters) — Instruction Tuned
 
-## Benchmarks Used
-- GSM8K (Mathematical Reasoning)
-- TruthfulQA (Factual Accuracy)
+## Benchmark Used
+- GSM8K (Grade School Math 8K) — Mathematical Reasoning
+
+## Key Results
+| Model | Accuracy |
+|---|---|
+| DistilGPT2 | 0% |
+| GPT2-Medium | 0% |
+| TinyLlama-1.1B | 30% |
 
 ## Key Finding
-Phi-2 achieved 14x higher accuracy than DistilGPT2 on GSM8K,
-confirming positive correlation between model size and 
-reasoning capability.
+Instruction-tuned models significantly outperform base models 
+on mathematical reasoning tasks. TinyLlama achieved 30% accuracy 
+while base GPT2 variants scored 0%, confirming that instruction 
+tuning is more critical than model size for reasoning ability.
+
+## Technologies Used
+Python, HuggingFace Transformers, PyTorch, Pandas, Matplotlib
+
+## Author
+Adi Lakshamma Bonam — Computer Science Undergraduate
