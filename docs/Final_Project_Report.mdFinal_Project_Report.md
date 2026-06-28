@@ -82,17 +82,22 @@ This workflow ensures reproducibility across multiple benchmark evaluations.
 The project is organized into the following directories:
 
 ```
-Open-LLM-Evaluation-Framework/
-│
+├── config/
 ├── datasets/
 ├── docs/
 ├── experiments/
 ├── presentation/
+├── report/
 ├── results/
 │   └── report/
 ├── src/
 │   ├── benchmarks/
-│   └── models/
+│   ├── evaluation/
+│   ├── metrics/
+│   ├── models/
+│   └── visualization/
+├── run_all.py
+├── generate_pdf.py
 ├── README.md
 └── requirements.txt
 ```
@@ -260,11 +265,11 @@ Three lightweight language models were considered during experimentation:
 
 ## 5.2 Benchmark Results
 
-| Model | Accuracy | Consistency | Reliability | Status |
-|--------|----------|-------------|-------------|----------|
-| DistilGPT2 | 0.0 | Low | Low | Completed |
-| TinyLlama | 1.0 | High | High | Completed |
-| Phi-2 | Experimental | Under Evaluation | Under Evaluation | Prototype |
+| Model | Parameters | Type | Accuracy | Consistency | Status |
+|---|---|---|---|---|---|
+| DistilGPT2 | 82M | Base Model | 0% | Consistent | Completed |
+| GPT2-Medium | 345M | Base Model | 0% | Consistent | Completed |
+| TinyLlama-1.1B | 1.1B | Instruction Tuned | 30% | Consistent | Completed |
 
 ---
 
@@ -272,15 +277,21 @@ Three lightweight language models were considered during experimentation:
 
 ### DistilGPT2
 
-DistilGPT2 generated incomplete responses for mathematical reasoning tasks. Although inference was fast, its reasoning capability was limited, resulting in poor benchmark accuracy.
+DistilGPT2 generated incomplete responses for mathematical reasoning tasks. Although inference was fast, its reasoning capability was limited, resulting in poor benchmark accuracy
 
 ### TinyLlama
+TinyLlama demonstrated significantly better reasoning 
+performance, achieving 30% accuracy on GSM8K. Being an 
+instruction-tuned model, it correctly answered simple 
+addition problems but struggled with subtraction and 
+multiplication tasks.
 
-TinyLlama demonstrated significantly better reasoning performance. It correctly answered the prototype GSM8K benchmark questions and achieved full accuracy on the evaluation subset.
-
-### Phi-2
-
-Phi-2 was successfully integrated into the framework for experimentation. Due to its larger size and higher hardware requirements, full benchmark evaluation was not completed within the current project scope. Initial testing indicated stronger reasoning capability compared to DistilGPT2.
+### GPT2-Medium
+GPT2-Medium (345M parameters) was evaluated as a middle 
+ground between DistilGPT2 and TinyLlama. Despite being 
+4x larger than DistilGPT2, it achieved 0% accuracy — 
+confirming that model size alone without instruction 
+tuning does not improve reasoning ability.
 
 ---
 
